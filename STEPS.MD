@@ -4,6 +4,10 @@ pip install 'transformers[torch]'
 pip install pyannote.audio
 pip install torchvision
 
+OR
+
+pip install -r requirements.txt
+
 
 delete aud2txt.txt and diarization.rttm from the output folder
 

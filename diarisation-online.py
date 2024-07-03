@@ -4,9 +4,11 @@ import torch
 
 local_model_path = "./model/pyanaudio"
 
+with open("./apitoken", 'r') as file:
+    key = file.read()
+    file.close()
 
-
-model = Model.from_pretrained("pyannote/segmentation-3.0", use_auth_token="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")
+model = Model.from_pretrained("pyannote/segmentation-3.0", use_auth_token=key)
 offline_model = Model.from_pretrained(local_model_path+"/pytorch_model.bin")
 
 for weights, offline_weights in zip(model.parameters(), offline_model.parameters()):

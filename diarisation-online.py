@@ -26,7 +26,7 @@ diarization = offline_vad("./data/test1.wav")
 
 # THIS USES THE ONLINE VERSION
 #diarization =pipeline("./data/test1.wav")
-#pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", use_auth_token="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")
+#pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", use_auth_token=key)
 
 with open("output/diarization.rttm", "w") as rttm:
     diarization.write_rttm(rttm)
